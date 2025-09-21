@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vɪᴋʀᴀɴᴛ ʀᴇᴀᴅʏ (விக்ராந்த்)™</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('back.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* Blur Overlay */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: white;
+      margin: 0 auto 15px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .timer {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .join-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 18px;
+      color: white;
+      background: #ff0000;
+      border-radius: 30px;
+      text-decoration: none;
+      cursor: pointer;
+      animation: fadeInOut 2s infinite;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(255,0,0,0.5);
+    }
+
+    .join-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255,0,0,0.8);
+    }
+
+    @keyframes fadeInOut {
+      0% {opacity: 0.3;}
+      50% {opacity: 1;}
+      100% {opacity: 0.3;}
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 480px) {
+      h1 { font-size: 20px; }
+      p { font-size: 14px; }
+      .timer { font-size: 18px; }
+      .join-btn { font-size: 16px; padding: 10px 20px; }
+      .logo { width: 90px; height: 90px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo">
+    </div>
+    <h1>Vɪᴋʀᴀɴᴛ ʀᴇᴀᴅʏ (விக்ராந்த்)™</h1>
+    <p>33 638 subscribers</p>
+    <a href="#" class="join-btn">Join [Vɪᴋʀᴀɴᴛ ʀᴇᴀᴅʏ (விக்ராந்த்)™] Channel</a>
+    <div class="timer" id="timer">60</div>
+  </div>
+
+  <script>
+    let time = 60;
+    const timerElement = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      time--;
+      timerElement.textContent = time;
+      if(time <= 0) {
+        clearInterval(countdown);
+        timerElement.textContent = "Time Up!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
